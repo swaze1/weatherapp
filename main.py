@@ -14,7 +14,7 @@ def home():
         response = requests.get(url.format(city_name)).json()
 
         name = response['location']['name']
-        country = response['location']['country']
+        region = response['location']['region']
         temp_c = response['current']['temp_c']
         temp_f = response['current']['temp_f']
         wind_speed = response['current']['wind_kph']
@@ -26,7 +26,7 @@ def home():
         time = datetime.now()
 
         return render_template("city.html", name=name,
-        country=country,
+        region=region,
         temp_c=temp_c,
         temp_f=temp_f,
         wind_direction=wind_direction,

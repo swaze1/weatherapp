@@ -12,15 +12,15 @@
   <body style="background-color: #212121">
     <div class="headers" style="margin: 5% auto">
       <h1 class="card-title" style="color:aquamarine; text-align: center;"><i class="bi bi-cloud-haze"></i></h1>
-      <h2 class="card-title" style="text-align: center; color: white"><strong style="color: aquamarine">{{ name }}, </strong>{{ country }}</h2>
+      <h2 class="card-title" style="text-align: center; color: white"><strong style="color: aquamarine">{{ name }}, </strong>{{ region }}</h2>
+      <h2 class="card-title" style="text-align: center; color: white"><strong style="color: aquamarine">{{ temp_c }}° C</strong></h2>
     </div>
 
     <div class="card mx-auto d-block" style="align-items: center; width: 20rem; margin-top: 5% auto; background-color: #212121">
-      <div class="card-body">
-        <p>Temperature: {{ temp_c }}° C</p>
+      <div class="card-body" style="color: white">
         <p>Wind: {{ wind_direction }} {{ wind_speed }} km/h</p>
-        <p>Humidity: {{ humidity }}</p>
-        <p>Clouds: {{ clouds }}</p>
+        <p>Humidity: {{ humidity }}%</p>
+        <p>Clouds: {{ clouds }}%</p>
         <p>Time: {{ time }}</p>
         <p>Visibility: {{ vis_km }} km</p>
       </div>
