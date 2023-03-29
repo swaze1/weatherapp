@@ -17,12 +17,10 @@
 
     <div class="card mx-auto d-block" style="align-items: center; width: 20rem; margin-top: 5% auto; background-color: #212121">
       <div class="card-body">
-        Temperature Celcius: temp_c = response['current']['temp_c']
-        = response['current']['temp_f']
-        wind_direction = response['current']['wind_dir']
-        humidity = response['current']['humidity']
-        clouds = response['current']['cloud']
-        icon = response['current']['condition']['icon']  
+        <p>Temperature: {{ temp_c }}</p>
+        <p>Wind: {{ wind_direction }}</p>
+        <p>Humidity: {{ humidity }}</p>
+        <p>Clouds = {{ clouds }}</p>
       </div>
   </div>
 
