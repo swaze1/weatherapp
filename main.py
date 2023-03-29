@@ -21,6 +21,7 @@ def home():
         wind_direction = response['current']['wind_dir']
         humidity = response['current']['humidity']
         clouds = response['current']['cloud']
+        text = response['current']['condition']['text']
         icon = response['current']['condition']['icon']
         vis_km = response['current']['vis_km']
         time = datetime.now()
@@ -35,7 +36,8 @@ def home():
         icon=icon,
         time=time,
         wind_speed=wind_speed,
-        vis_km=vis_km)
+        vis_km=vis_km,
+        text=text)
 
     else:
 
