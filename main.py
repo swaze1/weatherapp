@@ -11,13 +11,12 @@ def home():
         try:
             city_name = request.form['city']
 
-            url = f"http://api.weatherapi.com/v1/current.json?key={config.KEY}&q={city_name}"
+            url = f"http://api.weatherapi.com/v1/forecast.json?key={config.KEY}&q={city_name}"
             response = requests.get(url.format(city_name)).json()
 
             name = response['location']['name']
             region = response['location']['region']
             temp_c = response['current']['temp_c']
-            temp_f = response['current']['temp_f']
             wind_speed = response['current']['wind_kph']
             wind_direction = response['current']['wind_dir']
             humidity = response['current']['humidity']
@@ -25,12 +24,12 @@ def home():
             text = response['current']['condition']['text']
             icon = response['current']['condition']['icon']
             vis_km = response['current']['vis_km']
+            uv = response['current']['uv']
             time = datetime.now()
 
             return render_template("city.html", name=name,
             region=region,
             temp_c=temp_c,
-            temp_f=temp_f,
             wind_direction=wind_direction,
             humidity=humidity,
             clouds=clouds,
@@ -38,7 +37,8 @@ def home():
             time=time,
             wind_speed=wind_speed,
             vis_km=vis_km,
-            text=text)
+            text=text,
+            uv=uv)
 
         except KeyError as k:
 

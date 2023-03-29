@@ -11,24 +11,24 @@
 
   <body style="background-color: #212121">
     <div class="headers" style="margin: 5% auto">
-      <h2 class="card-title" style="text-align: center; color: white"><strong style="color: aquamarine">{{ name }}, </strong>{{ region }}</h2>
+      <h2 class="card-title" style="text-align: center; color: white"><strong style="color: aquamarine">{{ name }}, </strong>{{ region }}</h2>  
     </div>
 
 
   <div class="card mb-3 mx-auto d-block" style="align-items: center; margin-top: 5% auto; background-color: #212121; max-width: 540px;">
     <div class="row g-0">
-      <div class="col-md-4">
-        <img src={{icon}} class="img-fluid rounded-start" style="height: 80%; width: 100%">
-      </div>
+      <a class="navbar-brand" href="#">
+        <img src={{icon}} alt="Logo" width="70" height="70" class="d-inline-block align-text-top">
+        <strong style="color: white; position: absolute; top: 20px; font-size: 25px">{{ temp_c }} °C</strong>
+      </a>  
       <div class="col-md-8">
         <div class="card-body" style="color: white">
-          <h3 class="card-title"><strong style="color: aquamarine">{{ text }}</strong></h3>
-          <h3 class="card-title"><strong style="color: white">{{ temp_c }} °C</strong></h3>
           <p class="card-text">
-            <h5><strong style="color: aquamarine">Wind</strong><i class="bi bi-arrow-right-short"></i><strong style="color: white">{{ wind_direction }} {{ wind_speed }} km/h</strong></h5>
-            <h5><strong style="color: aquamarine">Humidity</strong><i class="bi bi-arrow-right-short"></i><strong style="color: white">{{ humidity }}%</strong></h5>
-            <h5><strong style="color: aquamarine">Clouds</strong><i class="bi bi-arrow-right-short"></i><strong style="color: white">{{ clouds }}%</strong></h5>
-            <h5><strong style="color: aquamarine">Visibility</strong><i class="bi bi-arrow-right-short"></i><strong style="color: white">{{ vis_km }} km</strong></h5>
+            <h5><strong style="color: aquamarine">Wind</strong> <strong style="color: white; position: absolute; left: 70%">{{ wind_direction }} {{ wind_speed }} km/h</strong></h5>
+            <h5><strong style="color: aquamarine">Humidity</strong> <strong style="color: white; position: absolute; left: 70%">{{ humidity }}%</strong></h5>
+            <h5><strong style="color: aquamarine">Clouds</strong> <strong style="color: white; position: absolute; left: 70%">{{ clouds }}%</strong></h5>
+            <h5><strong style="color: aquamarine">Visibility</strong> <strong style="color: white; position: absolute; left: 70%">{{ vis_km }} km</strong></h5>
+            <h5><strong style="color: aquamarine">UV Index</strong> <strong style="color: white; position: absolute; left: 70%">{{ uv }}</strong></h5>
           </p>
           <p class="card-text"><small class="text-body-secondary"></small></p>
         </div>
