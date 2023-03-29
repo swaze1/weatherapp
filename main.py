@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 import requests
 from assets import config
+from datetime import datetime 
 
 app = Flask(__name__)
 
@@ -16,10 +17,13 @@ def home():
         country = response['location']['country']
         temp_c = response['current']['temp_c']
         temp_f = response['current']['temp_f']
+        wind_speed = response['current']['wind_kph']
         wind_direction = response['current']['wind_dir']
         humidity = response['current']['humidity']
         clouds = response['current']['cloud']
         icon = response['current']['condition']['icon']
+        vis_km = response['current']['vis_km']
+        time = datetime.now()
 
         return render_template("city.html", name=name,
         country=country,
@@ -28,7 +32,10 @@ def home():
         wind_direction=wind_direction,
         humidity=humidity,
         clouds=clouds,
-        icon=icon)
+        icon=icon,
+        time=time,
+        wind_speed=wind_speed,
+        vis_km=vis_km)
 
     else:
 
